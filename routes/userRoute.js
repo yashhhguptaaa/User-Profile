@@ -2,11 +2,13 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/userModel')
 
-router.put('/edituser', async ( req, res) => {
+router.post('/edituser', async ( req, res) => {
 
     const editeduser = req.body.editeduser;
+    console.log(editeduser);
     try {
-        const user =await User.find({})
+        const user =await User.findOne({_id : "612b4a232b636581efde75f1"})
+        console.log("user",user);
 
         user.name = editeduser.name
         user.email = editeduser.email
@@ -21,16 +23,12 @@ router.put('/edituser', async ( req, res) => {
         user.facebook = editeduser.facebook
         user.github = editeduser.github
         user.website = editeduser.website
-
-
-
-        
-
         await user.save();
 
-        res.send('User Details Edited Successfully')
+        res.send(user)
 
     } catch (error) {
-        return res.status(400).json({ message: error });
+        return res.status(400).json({ message: "Error hai salle"});
     }
 })
+module.exports = router;
