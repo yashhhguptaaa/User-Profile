@@ -1,5 +1,5 @@
 const express = require("express");
-// const db= require('./db');
+const db= require('./db');
 // const Pizza = require('./models/pizzaModel')
 // const pizzaRoutes = require('./routes/pizzasRoute');
 // const userRoutes = require('./routes/userRoute')
