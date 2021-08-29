@@ -14,7 +14,7 @@ export const editUserAction = (editeduser) => async (dispatch,getdata) => {
 
         const currentUser = getdata().editUserReducer.user;
         localStorage.setItem('currentUser',JSON.stringify(currentUser));
-        // window.location.href='/details'
+        window.location.href='/details'
 
     } catch (error) {
         
