@@ -1,11 +1,13 @@
 import React ,{useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
     FormControl,
     FormLabel,
     FormErrorMessage,
     FormHelperText,
 } from "@chakra-ui/react";
-import { Input, Box, Flex, Spacer,Select, Button } from "@chakra-ui/react"
+import { Input, Box, Flex, Spacer,Select, Button } from "@chakra-ui/react";
+import { editUserAction } from '../actions/userActions';
 
 export default function Homescreen() {
 
@@ -22,6 +24,8 @@ export default function Homescreen() {
     const [facebook, setFacebook] = useState('')
     const [github, setGithub] = useState('')
     const [website, setWebsite] = useState('')
+
+    const dispatch = useDispatch()
 
     function submitForm(e){
         e.preventDefault();
@@ -43,6 +47,7 @@ export default function Homescreen() {
         }
 
         console.log(editUser);
+        dispatch(editUserAction(editUser));
     }
 
 

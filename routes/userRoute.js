@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../models/userModel')
 
 router.post('/edituser', async ( req, res) => {
+    console.log("inside router")
 
     const editeduser = req.body.editeduser;
     console.log(editeduser);

@@ -1,15 +1,20 @@
 import axios from "axios";
 
-export const editUser = (editeduser) => async dispatch => {
+export const editUserAction = (editeduser) => async (dispatch,getdata) => {
+
+    console.log("Inside Action",editeduser)
 
     dispatch({type : 'EDIT_USER_REQUEST'});
 
     try {
-        
-        const response = await axios.put('/api/users/edituser',{editeduser});
+        console.log("Inside Post")
+        const response = await axios.post('/api/users/edituser',{editeduser});
         console.log(response);
-        dispatch({type : 'EDIT_USER_SUCCESS'})
-        window.location.href='/details'
+        dispatch({type : 'EDIT_USER_SUCCESS',payload:response.data})
+
+        const currentUser = getdata().editUserReducer.user;
+        localStorage.setItem('currentUser',JSON.stringify(currentUser));
+        // window.location.href='/details'
 
     } catch (error) {
         
