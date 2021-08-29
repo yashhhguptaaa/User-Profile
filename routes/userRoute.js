@@ -13,11 +13,22 @@ router.put('/edituser', async ( req, res) => {
         user.number = editeduser.number
         user.profileTag = editeduser.profileTag
         user.profilePhoto = editeduser.profilePhoto
-        user.profilePhoto = [editedpizza.prices]
+        user.location = editeduser.location
+        user.availableFor = editeduser.availableFor
+        user.aboutYou = editeduser.aboutYou
+        user.skills = editeduser.skills
+        user.linkedIn = editeduser.linkedIn
+        user.facebook = editeduser.facebook
+        user.github = editeduser.github
+        user.website = editeduser.website
 
-        await pizza.save();
 
-        res.send('Pizza Details Edited Successfully')
+
+        
+
+        await user.save();
+
+        res.send('User Details Edited Successfully')
 
     } catch (error) {
         return res.status(400).json({ message: error });
