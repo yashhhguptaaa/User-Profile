@@ -65,6 +65,7 @@ export default function Homescreen() {
                     <Input fontWeight="extrabold" placeholder="What would you like to call yourself" boxShadow="outline" type="text" value={profileTag} onChange={(e) => { setProfileTag(e.target.value) }} />
                     <FormLabel fontSize="2xl" fontWeight="extrabold">Profile Photo</FormLabel>
                     <Input  fontWeight="extrabold" placeholder="Upload your profile photo" boxShadow="outline" type="text" value={profilePhoto} onChange={(e) => { setProfilePhoto(e.target.value) }} />
+                    {/* <input   type="file" value={profilePhoto} onChange={(e) => { setProfilePhoto(e.target.value) }} /> */}
                     <FormLabel fontSize="2xl" fontWeight="extrabold">Location</FormLabel>
                     <Input fontWeight="extrabold" placeholder="Your Location" boxShadow="outline" type="address" value={location} onChange={(e) => { setLocation(e.target.value) }} />
                     <FormLabel fontSize="2xl" fontWeight="extrabold">Job Type</FormLabel>
