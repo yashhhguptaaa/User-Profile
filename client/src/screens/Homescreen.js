@@ -1,4 +1,4 @@
-import React ,{useState} from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     FormControl,
@@ -6,7 +6,7 @@ import {
     FormErrorMessage,
     FormHelperText,
 } from "@chakra-ui/react";
-import { Input, Box, Flex, Spacer,Select, Button } from "@chakra-ui/react";
+import { Input, Box, Flex, Spacer, Select, Button } from "@chakra-ui/react";
 import { editUserAction } from '../actions/userActions';
 
 export default function Homescreen() {
@@ -27,7 +27,7 @@ export default function Homescreen() {
 
     const dispatch = useDispatch()
 
-    function submitForm(e){
+    function submitForm(e) {
         e.preventDefault();
 
         const editUser = {
@@ -53,51 +53,52 @@ export default function Homescreen() {
 
     return (
         <div>
-            <Box>
+            <Box bgGradient="linear(to-t, gray.200, gray.500)" boxShadow="dark-lg" p="5" maxW="500px" borderWidth="5px" alignContent="center" m="auto" mt="40px" mb="40px">
                 <FormControl id="email" >
-                    <FormLabel>Name</FormLabel>
-                    <Input variant="outline" type="text" value={name} onChange={(e) => {setName(e.target.value)}} />
-                    <FormLabel>Email address</FormLabel>
-                    <Input variant="outline" type="email" value={email} onChange={(e)=>{setEmail(e.target.email)}} />
-                    <FormLabel>Phone Number</FormLabel>
-                    <Input variant="outline" type="string" value={number} onChange={(e) => {setNumber(e.target.number)}} />
-                    <FormLabel>Profile Tag</FormLabel>
-                    <Input variant="outline" type="text" value={profileTag} onChange={(e) => {setProfileTag(e.target.value)}} />
-                    <FormLabel>Profile Photo</FormLabel>
-                    <Input variant="outline" type="text" value={profilePhoto} onChange={(e) => {setProfilePhoto(e.target.value)}} />
-                    <FormLabel>Location</FormLabel>
-                    <Input variant="outline" type="address" value={location} onChange={(e) => {setLocation(e.target.value)}} />
-                    <FormLabel>Job Type</FormLabel>
-                    <Select placeholder="Select option" value={availableFor} onChange={(e) => {setAvailableFor(e.target.value)}}>
+                    <FormLabel fontSize="2xl" fontWeight="extrabold" >Name</FormLabel>
+                    <Input fontWeight="extrabold" placeholder="What is your name?" boxShadow="outline" type="text" value={name} onChange={(e) => { setName(e.target.value) }} />
+                    <FormLabel fontSize="2xl" fontWeight="extrabold" >Email address</FormLabel>
+                    <Input fontWeight="extrabold" placeholder="Write your email address here" boxShadow="outline" type="text" value={email} onChange={(e) => { setEmail(e.target.email) }} />
+                    <FormLabel fontSize="2xl" fontWeight="extrabold" >Phone Number</FormLabel>
+                    <Input fontWeight="extrabold" placeholder="Place give your phone number" boxShadow="outline" type="text" value={number} onChange={(e) => { setNumber(e.target.number) }} />
+                    <FormLabel fontSize="2xl" fontWeight="extrabold" >Profile Tag</FormLabel>
+                    <Input fontWeight="extrabold" placeholder="What would you like to call yourself" boxShadow="outline" type="text" value={profileTag} onChange={(e) => { setProfileTag(e.target.value) }} />
+                    <FormLabel fontSize="2xl" fontWeight="extrabold">Profile Photo</FormLabel>
+                    <Input  fontWeight="extrabold" placeholder="Upload your profile photo" boxShadow="outline" type="text" value={profilePhoto} onChange={(e) => { setProfilePhoto(e.target.value) }} />
+                    <FormLabel fontSize="2xl" fontWeight="extrabold">Location</FormLabel>
+                    <Input fontWeight="extrabold" placeholder="Your Location" boxShadow="outline" type="address" value={location} onChange={(e) => { setLocation(e.target.value) }} />
+                    <FormLabel fontSize="2xl" fontWeight="extrabold">Job Type</FormLabel>
+                    <Select  boxShadow="outline" placeholder="Select option" value={availableFor} onChange={(e) => { setAvailableFor(e.target.value) }}>
                         <option value="Job">Job</option>
                         <option value="Teaching">Teaching</option>
                     </Select>
-                    <FormLabel>About</FormLabel>
-                    <Input placeholder="Write about yourself" variant="outline" type="text" value={aboutYou} onChange={(e) => {setAboutYou(e.target.value)}}/>
-                    <FormLabel>Skills</FormLabel>
-                    <Input placeholder="Write your skills in comma separated manner" variant="outline" type="text" value={skills} onChange={(e) => {setSkills(e.target.value)}}/>
+                    <FormLabel fontSize="2xl" fontWeight="extrabold">About</FormLabel>
+                    <Input fontWeight="extrabold" placeholder="Write about yourself" boxShadow="outline" type="text" value={aboutYou} onChange={(e) => { setAboutYou(e.target.value) }} />
+                    <FormLabel fontSize="2xl" fontWeight="extrabold">Skills</FormLabel>
+                    <Input fontWeight="extrabold" placeholder="Write your skills in comma separated manner" boxShadow="outline" type="text" value={skills} onChange={(e) => { setSkills(e.target.value) }} />
                     <Flex>
                         <Box>
-                            <FormLabel>LinkedIn Profile</FormLabel>
-                            <Input variant="outline" type="text" value={linkedIn} onChange={(e) => {setLinkedIn(e.target.value)}}/>
+                            <FormLabel fontSize="2xl" fontWeight="extrabold">LinkedIn Profile</FormLabel>
+                            <Input boxShadow="outline" type="text" value={linkedIn} onChange={(e) => { setLinkedIn(e.target.value) }} />
                         </Box>
                         <Spacer />
-                        <div>
-                            <FormLabel>Facebook Profile</FormLabel>
-                            <Input variant="outline" type="text" value={facebook} onChange={(e) => {setFacebook(e.target.value)}}/>
-                        </div>
+                        <Box>
+                            <FormLabel fontSize="2xl" fontWeight="extrabold">Facebook Profile</FormLabel>
+                            <Input boxShadow="outline" type="text" value={facebook} onChange={(e) => { setFacebook(e.target.value) }} />
+                        </Box>
                     </Flex>
                     <Flex>
-                        <Box ml="20px">
-                            <FormLabel>Github URL</FormLabel>
-                            <Input variant="outline" type="text" value={github} onChange={(e) => {setGithub(e.target.value)}}/>
+                        <Box >
+                            <FormLabel fontSize="2xl" fontWeight="extrabold">Github URL</FormLabel>
+                            <Input boxShadow="outline" type="text" value={github} onChange={(e) => { setGithub(e.target.value) }} />
                         </Box>
+                        <Spacer />
                         <Box>
-                            <FormLabel>Website</FormLabel>
-                            <Input variant="outline" type="text" value={website} onChange={(e) => {setWebsite(e.target.value)}}/>
+                            <FormLabel fontSize="2xl" fontWeight="extrabold">Website</FormLabel>
+                            <Input boxShadow="outline"  type="text" value={website} onChange={(e) => { setWebsite(e.target.value) }} />
                         </Box>
                     </Flex>
-                    <Button colorScheme="blue" onClick={submitForm}>Submit</Button>
+                    <Button fontSize="2xl" fontWeight="extrabold" mt="20px" colorScheme="blue" onClick={submitForm}>Submit</Button>
                 </FormControl>
             </Box>
         </div>
